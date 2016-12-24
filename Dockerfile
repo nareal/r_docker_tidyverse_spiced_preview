@@ -6,10 +6,8 @@ MAINTAINER "Nelson Areal" nareal@gmail.com
 ENV DEBIAN-FRONTEND noninteractive  
 ENV PATH /usr/lib/rstudio-server/bin/:$PATH   
 
-RUN apt-get update \
+RUN apt-get update -y \
   && apt-get --purge remove -y rstudio-server \
-  && apt-get install -y -t unstable --no-install-recommends \
-    lsb-release \
   && wget --no-check-certificate \
     https://raw.githubusercontent.com/rocker-org/rstudio-daily/master/latest.R \
   && Rscript latest.R && rm latest.R 
