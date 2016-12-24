@@ -1,8 +1,6 @@
 # r_docker_tidyverse_spiced_preview
 
-[![Build Status](https://travis-ci.org/nareal/r_docker_tidyverse_spiced_preview.svg?branch=master)](https://travis-ci.org/nareal/hr_docker_tidyverse_spiced_preview)
-[![Size and layers](https://images.microbadger.com/badges/image/nareal/r_docker_tidyverse_spiced_preview.svg)](https://registry.hub.docker.com/u/nareal/r_docker_tidyverse_spiced_preview)
-[![Version](https://images.microbadger.com/badges/version/nareal/r_docker_tidyverse_spiced_preview.svg)](https://registry.hub.docker.com/u/nareal/r_docker_tidyverse_spiced_preview)
+[![Build Status](https://travis-ci.org/nareal/r_docker_tidyverse_spiced_preview.svg?branch=master)](https://travis-ci.org/nareal/hr_docker_tidyverse_spiced_preview) [![Size and layers](https://images.microbadger.com/badges/image/nareal/r_docker_tidyverse_spiced_preview.svg)](https://registry.hub.docker.com/u/nareal/r_docker_tidyverse_spiced_preview) [![Version](https://images.microbadger.com/badges/version/nareal/r_docker_tidyverse_spiced_preview.svg)](https://registry.hub.docker.com/u/nareal/r_docker_tidyverse_spiced_preview)
 
 
 This docker file adds the preview version of Rstudio to the [https://hub.docker.com/r/nareal/r_docker_tidyverse_spiced/](https://hub.docker.com/r/nareal/r_docker_tidyverse_spiced/). This image extends [rocker/hadleyverse](https://hub.docker.com/r/rocker/hadleyverse/) docker image, that includes RStudio + rmarkdown/pandoc/latex + R package ecosystem from Hadley Wickham, for more information check the [rocker-org/hadleyverse github repository](https://github.com/rocker-org/hadleyverse) and [nareal/r_docker_tidyverse_spiced: Docker image](https://github.com/nareal/r_docker_tidyverse_spiced).
