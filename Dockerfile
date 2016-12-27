@@ -1,6 +1,5 @@
 FROM nareal/r_docker_tidyverse_spiced
 
-## This handle reaches Carl and Dirk
 MAINTAINER "Nelson Areal" nareal@gmail.com
 
 ENV DEBIAN-FRONTEND noninteractive  
