@@ -11,8 +11,8 @@ before_install:
 ## Crude test, see if our container stays up after launch
 script:
   - docker run -ti nareal/r_docker_tidyverse_spiced_preview R --version
-  - docker run -d --name rstudio nareal/r_docker_tidyverse_spiced_preview
-  - sleep 5 && docker ps | grep r_docker_tidyverse_spiced_preview
+  - docker run -d --name rstudio -e PASSWORD=rstudio1 nareal/r_docker_tidyverse_spiced_preview
+  - sleep 5 && docker ps | grep rstudio
   - docker rm -f $(docker ps -a -q)
 
  
