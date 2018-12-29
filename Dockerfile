@@ -11,5 +11,5 @@ RUN apt-get update -y \
     https://raw.githubusercontent.com/nareal/r_docker_tidyverse_spiced_preview/master/R/get_preview.R \
   && Rscript get_preview.R && rm get_preview.R 
 
-RUN dpkg -i rstudio-server-daily-amd64.deb \
+RUN dpkg -i rstudio-server-preview-amd64.deb \
   && rm rstudio-server-*-amd64.deb   
