@@ -7,6 +7,7 @@ ENV PATH /usr/lib/rstudio-server/bin/:$PATH
 
 RUN apt-get update -y \
   && apt-get --purge remove -y rstudio-server \
+  && apt-get install -y libclang-dev \
   && wget --no-check-certificate \
     https://raw.githubusercontent.com/nareal/r_docker_tidyverse_spiced_preview/master/R/get_preview.R \
   && Rscript get_preview.R && rm get_preview.R 
