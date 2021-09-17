@@ -2,7 +2,5 @@
 
 library(xml2)
 page <- read_html("https://www.rstudio.com/products/rstudio/download/preview/")
-file_version <- xml_text(xml_find_all(page, "//h2")[1])
-file_version <- sub(".*v([0-9]\\.[0-9]*\\.[0-9]*).*", "\\1", file_version)
-file_name <- paste0("https://s3.amazonaws.com/rstudio-ide-build/server/bionic/amd64/rstudio-server-", file_version, "-amd64.deb")
+file_name <- xml_text(xml_find_all(page, "//a[starts-with(text(), 'RStudio Server') and contains(text(), 'Ubuntu')]/@href"))
 download.file(file_name, method="wget", dest="rstudio-server-preview-amd64.deb")
