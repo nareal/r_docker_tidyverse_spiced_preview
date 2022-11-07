@@ -28,16 +28,10 @@ The current image uses the latest R version, and the daily RStudio build version
 - [readtext](https://cran.r-project.org/web/packages/readtext/index.html)
 - [furrr](https://cran.r-project.org/web/packages/furrr/index.html)
 - [duckdb](https://cran.r-project.org/web/packages/duckdb/index.html)
+- [multidplyr](https://cran.r-project.org/web/packages/multidplyr/index.html)
 - [frenchdata](https://cran.r-project.org/web/packages/frenchdata/index.html)
 
-and the following from github repositories:
-
-- [d3heatmap](https://github.com/rstudio/d3heatmap)
-- [metricsgraphics](http://hrbrmstr.github.io/metricsgraphics/)
-- [Slidify](http://slidify.org/#)
-- [hadley/multidplyr: Partitioned data frames for 'dplyr'](https://github.com/hadley/multidplyr)
-
-Additionaly adds the `curl` linux package to the image.
+Additionally, adds the `curl` linux package to the image.
 
 To use this image run:
 

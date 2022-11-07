@@ -31,8 +31,3 @@ RUN install2.r --error \
   duckdb \
   multidplyr \
   frenchdata &> /dev/null
-
-## Install packages from github
-RUN r -e 'remotes::install_github("ramnathv/slidify", quiet = TRUE)' \
-  && r -e 'remotes::install_github("rstudio/d3heatmap", quiet = TRUE)' \
-  && r -e 'remotes::install_github("hrbrmstr/metricsgraphics", quiet = TRUE)'
