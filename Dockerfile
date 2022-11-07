@@ -1,16 +1,38 @@
-FROM nareal/r_docker_tidyverse_spiced
-
-MAINTAINER "Nelson Areal" nareal@gmail.com
-
-ENV DEBIAN-FRONTEND noninteractive  
-ENV PATH /usr/lib/rstudio-server/bin/:$PATH   
+FROM rocker/tidyverse:latest-daily
+LABEL org.opencontainers.image.authors="Nelson Areal <nareal@gmail.com>"
 
 RUN apt-get update -y \
-  && apt-get --purge remove -y rstudio-server \
-  && apt-get install -y libclang-dev \
-  && wget --no-check-certificate \
-    https://raw.githubusercontent.com/nareal/r_docker_tidyverse_spiced_preview/master/R/get_preview.R \
-  && Rscript get_preview.R && rm get_preview.R 
+  && apt-get install -y curl libjpeg-dev libpoppler-cpp-dev opensp
 
-RUN dpkg -i rstudio-server-preview-amd64.deb \
-  && rm rstudio-server-*-amd64.deb   
+## Install additional packages. 
+RUN install2.r --error \
+  fBasics \
+  # fArma \
+  fGarch \
+  rugarch \
+  forecast \
+  timeSeries \
+  flexdashboard \
+  leaflet \
+  dygraphs \ 
+  plotly \
+  rbokeh \ 
+  highcharter \
+  networkD3 \
+  DT \
+  ggvis \ 
+  xts \
+  remotes \ 
+  here \
+  googledrive \
+  quanteda \
+  readtext \ 
+  furrr \ 
+  duckdb \
+  multidplyr \
+  frenchdata &> /dev/null
+
+## Install packages from github
+RUN r -e 'remotes::install_github("ramnathv/slidify", quiet = TRUE)' \
+  && r -e 'remotes::install_github("rstudio/d3heatmap", quiet = TRUE)' \
+  && r -e 'remotes::install_github("hrbrmstr/metricsgraphics", quiet = TRUE)'
